@@ -4,6 +4,7 @@ import Header from '../Header'
 import "../../index.css";
 import Projects from '../Projects';
 import SouthOutlinedIcon from '@mui/icons-material/SouthOutlined';
+import ragieapiintegrationimg from "../Images/ragieapiintegration.jpg";
 import workoutimg from "../Images/workout.jpg";
 import votingapplicationimg from "../Images/VotingApplication.jpg";
 import chatappimg from "../Images/chatapp.jpg";
@@ -16,6 +17,13 @@ import { useSelector } from 'react-redux';
 function HomePage() {
   // Setting up dummy data for the projects data
   const [projects, setprojects] = useState([
+    {
+      name: "Mern Application 'workout buddy'",
+      description: "This is a full stack application built on the MERN stack with a Rust backend and Docker",
+      stack: "Vuejs, Typescript, Nodejs, Postgres, Docker, Aws, JWT, Groq api, Slack api and Ragie api",
+      link: "https://ragie-ai-slack-connector.vercel.app/",
+      img: ragieapiintegrationimg,
+    },
     {
       name: "Mern Application 'workout buddy'",
       description: "This is a full stack application built on the MERN stack with a Rust backend and Docker",
