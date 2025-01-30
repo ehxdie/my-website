@@ -18,9 +18,9 @@ function HomePage() {
   // Setting up dummy data for the projects data
   const [projects, setprojects] = useState([
     {
-      name: "Mern Application 'workout buddy'",
-      description: "This is a full stack application built on the MERN stack with a Rust backend and Docker",
-      stack: "Vuejs, Typescript, Nodejs, Postgres, Docker, Aws, JWT, Groq api, Slack api and Ragie api",
+      name: "Ragie AI Slack Connector",
+      description: "This is a Retrieval Augmented Generation (RAG) solution with Slack integration for message retrieval, leveraging the Ragie API for data storage and Groq AI for query responses.",
+      stack: "Vuejs, Typescript, Nodejs, Postgres, Docker, AWS, JWT authentication, Groq api, Slack api and Ragie api",
       link: "https://ragie-ai-slack-connector.vercel.app/",
       img: ragieapiintegrationimg,
     },
