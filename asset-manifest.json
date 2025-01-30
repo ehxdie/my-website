@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/my-website/static/css/main.f03a1480.css",
-    "main.js": "/my-website/static/js/main.d8d92f40.js",
+    "main.js": "/my-website/static/js/main.04850510.js",
     "static/js/787.61f74e33.chunk.js": "/my-website/static/js/787.61f74e33.chunk.js",
+    "static/media/ragieapiintegration.jpg": "/my-website/static/media/ragieapiintegration.f8b9a0116df1f14574b8.jpg",
     "static/media/workout.jpg": "/my-website/static/media/workout.9c2d3e9003c0c8a00b3c.jpg",
     "static/media/VotingApplication.jpg": "/my-website/static/media/VotingApplication.e055fa99cf07a9167869.jpg",
     "static/media/Screenshot 2023-05-10 204421.jpg": "/my-website/static/media/Screenshot 2023-05-10 204421.0f3e788d2ba0448b69ab.jpg",
@@ -11,11 +12,11 @@
     "static/media/logo.svg": "/my-website/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/my-website/index.html",
     "main.f03a1480.css.map": "/my-website/static/css/main.f03a1480.css.map",
-    "main.d8d92f40.js.map": "/my-website/static/js/main.d8d92f40.js.map",
+    "main.04850510.js.map": "/my-website/static/js/main.04850510.js.map",
     "787.61f74e33.chunk.js.map": "/my-website/static/js/787.61f74e33.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f03a1480.css",
-    "static/js/main.d8d92f40.js"
+    "static/js/main.04850510.js"
   ]
 }
