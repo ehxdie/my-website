@@ -18,7 +18,7 @@ function HomePage() {
   // Setting up dummy data for the projects data
   const [projects, setprojects] = useState([
     {
-      name: "Ragie AI Slack Connector",
+      name: "Ragie AI Third Party Slack Connector",
       description: "This is a Retrieval Augmented Generation (RAG) solution with Slack integration for message retrieval, leveraging the Ragie API for data storage and Groq AI for query responses.",
       stack: "Vuejs, Typescript, Nodejs, Postgres, Docker, AWS, JWT authentication, Groq api, Slack api and Ragie api",
       link: "https://ragie-ai-slack-connector.vercel.app/",
