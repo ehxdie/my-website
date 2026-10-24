@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { profile } from '../data';
+import { ScrollProgress } from './ui';
 
 const LINKS = [
   { href: '#work', label: 'Work' },
@@ -37,6 +38,7 @@ export default function Nav() {
           <a href={profile.cv} download className="btn-accent hidden !px-4 !py-1.5 sm:inline-flex">CV</a>
         </div>
       </nav>
+      <ScrollProgress />
     </header>
   );
 }

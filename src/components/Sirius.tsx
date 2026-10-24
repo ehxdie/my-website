@@ -15,7 +15,7 @@ export default function Sirius() {
         <SectionHead
           index="05"
           label="Case study"
-          title={<>Sirius: {sirius.tagline}</>}
+          title={`Sirius: ${sirius.tagline}`}
           intro={sirius.summary}
         />
 
@@ -71,7 +71,7 @@ export default function Sirius() {
             ))}
           </Reveal>
         </div>
-        <p className="mt-4 text-xs text-muted">Pass rate is a simulation over 2007–2026 with trading costs doubled to approximate live conditions; past performance does not guarantee future results.</p>
+        <p className="mt-4 text-xs text-muted">Profit factor is from a backtest over 2007–2026 with trading costs doubled to approximate live conditions; past performance does not guarantee future results.</p>
       </div>
     </section>
   );

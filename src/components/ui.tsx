@@ -37,10 +37,85 @@ export function SectionHead({ index, label, title, intro }: { index: string; lab
         <span className="text-ink/80">{label.toUpperCase().replace(/\s+/g, '_')}</span>
         <span className="h-px flex-1 bg-gradient-to-r from-accent/50 via-line to-transparent" />
       </div>
-      <h2 className="section-title max-w-3xl">{title}</h2>
+      <h2 className="section-title max-w-3xl">{typeof title === 'string' ? <Scramble text={title} /> : title}</h2>
       {intro && <p className="max-w-2xl text-base leading-relaxed text-muted sm:text-lg">{intro}</p>}
     </Reveal>
   );
+}
+
+const GLYPHS = '!<>-_\\/[]{}=+*^?#ABCDEFX0123456789';
+
+/**
+ * Decodes text from random glyphs the first time it scrolls into view, left to right.
+ * Screen readers get the real text straight away (aria-label); the scramble is decoration.
+ */
+export function Scramble({ text, duration = 900 }: { text: string; duration?: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [out, setOut] = useState(text);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || reducedMotion() || typeof IntersectionObserver === 'undefined') return;
+    let raf = 0;
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      io.disconnect();
+      const start = performance.now();
+      const tick = (now: number) => {
+        const p = Math.min(1, (now - start) / duration);
+        const solved = Math.floor(p * text.length);
+        setOut(text.split('').map((ch, i) => (i < solved || ch === ' ' ? ch : GLYPHS[(Math.random() * GLYPHS.length) | 0])).join(''));
+        if (p < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    }, { rootMargin: '0px 0px -10% 0px' });
+    io.observe(el);
+    return () => { io.disconnect(); cancelAnimationFrame(raf); };
+  }, [text, duration]);
+  return <span ref={ref} aria-label={text}><span aria-hidden>{out}</span></span>;
+}
+
+/** Thin neon bar under the nav showing how far down the page you are. */
+export function ScrollProgress() {
+  const [p, setP] = useState(0);
+  useEffect(() => {
+    const on = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setP(max > 0 ? window.scrollY / max : 0);
+    };
+    on();
+    window.addEventListener('scroll', on, { passive: true });
+    window.addEventListener('resize', on);
+    return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); };
+  }, []);
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-[2px]">
+      <div className="h-full origin-left bg-gradient-to-r from-accent via-accent to-hot shadow-[0_0_10px_rgb(0_238_255/0.8)]" style={{ transform: `scaleX(${p})` }} />
+    </div>
+  );
+}
+
+/** Lets every .card light up under the cursor: sets --mx/--my on the card being hovered. */
+export function useCardSpotlight() {
+  useEffect(() => {
+    if (reducedMotion()) return;
+    const on = (e: PointerEvent) => {
+      const card = (e.target as Element | null)?.closest?.('.card') as HTMLElement | null;
+      if (!card) return;
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+      card.style.setProperty('--my', `${e.clientY - r.top}px`);
+    };
+    document.addEventListener('pointermove', on, { passive: true });
+    return () => document.removeEventListener('pointermove', on);
+  }, []);
+}
+
+/** Live clock in the visitor-facing location's time zone (Abuja, WAT). */
+export function WatClock() {
+  const fmt = () => new Intl.DateTimeFormat('en-GB', { timeZone: 'Africa/Lagos', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' }).format(new Date());
+  const [t, setT] = useState(fmt);
+  useEffect(() => { const id = setInterval(() => setT(fmt()), 1000); return () => clearInterval(id); }, []);
+  return <span className="tabular-nums">{t} WAT</span>;
 }
 
 export function Chips({ items }: { items: string[] }) {

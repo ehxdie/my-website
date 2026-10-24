@@ -3,7 +3,7 @@
 export const profile = {
   name: 'Edidiong Ephraim',
   role: 'Software Engineer · Lead Backend',
-  location: 'Abuja, Nigeria · working remotely',
+  location: 'Abuja, Nigeria · Remote',
   email: 'ephraimedy@gmail.com',
   cv: '/Ephraim-Edidiong-CV.pdf', // downloaded by the CV buttons
   github: 'https://github.com/ehxdie',
@@ -18,26 +18,26 @@ export const stack = [
 
 export const sirius = {
   name: 'Sirius',
-  tagline: 'An automated trading platform built to pass prop-firm challenges.',
+  tagline: 'An automated trading EA that researches, sizes and runs its own trades.',
   summary:
-    'A full system, from research to live execution: a MetaTrader 5 bridge streams market data and account state into a TypeScript server, which runs six systematic strategies, checks every order against the prop firm’s rules, and places trades through the EA. A React dashboard shows the account, the rules and every decision the engine makes.',
+    'A full trading system, from research to live execution: a MetaTrader 5 Expert Advisor streams market data and account state into a TypeScript engine, which runs six systematic strategies across forex, gold and the Nasdaq, sizes every position from its stop, checks it against hard risk limits, and sends the order back to the EA. A React dashboard shows the account, the risk and every decision the engine makes.',
   stats: [
     { value: '10.5M', label: 'candles of 5-minute data, 2006 to today' },
     { value: '6', label: 'strategies kept, after testing many published ideas and an ML model' },
-    { value: '80%', label: 'simulated FTMO 1-Step pass rate at realistic costs' },
+    { value: '1.22', label: 'profit factor over 4,200+ backtested trades, with trading costs doubled' },
   ],
   built: [
     'MQL5 Expert Advisor that streams bars, account, positions and deals, and executes queued orders idempotently',
-    'Backtester with exact FTMO 1-Step / 2-Step rules, rolling starts and Monte-Carlo forward-test limits',
+    'Backtester with realistic costs, out-of-sample checks and Monte-Carlo forward-test limits',
     'Live engine with a risk guard (daily and maximum loss floors, open-risk cap), news guard and kill switch',
     'Research pipeline: data cleaning, out-of-sample tests and live-cost stress tests before anything ships',
-    'Dashboard with live FTMO rule status, strategy results, order log and slippage tracking',
+    'Dashboard with live risk status, strategy results, order log and slippage tracking',
   ],
   stackList: ['TypeScript', 'Node.js', 'Fastify', 'Prisma', 'PostgreSQL', 'Docker', 'MQL5', 'React', 'Tailwind', 'socket.io'],
   status: 'Forward testing on a demo account · private repository',
   images: [
-    { src: '/work/sirius-ftmo.jpg', alt: 'Sirius dashboard: live FTMO rule status with daily loss, risk cap and profit target meters' },
-    { src: '/work/sirius-backtest.jpg', alt: 'Sirius backtest: FTMO pass rates at every risk level, account growth and forward-test limits' },
+    { src: '/work/sirius-engine.jpg', alt: 'Sirius dashboard: automated trading controls, kill switch, orders sent to MT5 and the engine log' },
+    { src: '/work/sirius-growth.jpg', alt: 'Sirius backtest: account growth from closed trades and the forward-test limits used to judge live results' },
   ],
 };
 

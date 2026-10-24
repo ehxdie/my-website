@@ -35,6 +35,11 @@
 @layer components {
   .wrap { @apply mx-auto w-full max-w-page px-5 sm:px-8; }
   .eyebrow { @apply font-mono text-[11px] uppercase tracking-[0.2em] text-muted; }
+  /* Glowing status badge with cut corners (hero status bar) */
+  .badge {
+    @apply inline-flex items-center gap-2.5 border px-3.5 py-2;
+    clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 9px 100%, 0 calc(100% - 9px));
+  }
   .chip {
     @apply inline-flex items-center border border-accent/25 bg-accent/[0.04] px-2 py-0.5 font-mono text-[10.5px] uppercase tracking-wider text-accent/80;
   }
@@ -44,6 +49,11 @@
     @apply relative border border-line bg-surface/80 backdrop-blur-sm;
     clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut)));
   }
+  /* Cursor spotlight: --mx/--my are set by useCardSpotlight while the pointer is over the card */
+  .card {
+    background-image: radial-gradient(420px circle at var(--mx, -999px) var(--my, -999px), rgb(var(--accent) / 0.09), transparent 45%);
+  }
+  .card:hover { border-color: rgb(var(--accent) / 0.35); }
   .card::before, .card::after {
     content: '';
     position: absolute;
