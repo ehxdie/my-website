@@ -34,7 +34,7 @@ export default function Hero() {
         <h1 className="max-w-5xl animate-rise font-display text-[2.4rem] font-bold uppercase leading-[0.98] tracking-tight [animation-delay:80ms] sm:text-7xl lg:text-[5.4rem]">
           I build payment rails, AI search and{' '}
           <span className="glitch neon whitespace-nowrap" data-text="data pipelines">data pipelines</span>{' '}
-          that run on <span className="neon-hot">their own</span>.
+          that businesses <span className="neon-hot">run on</span>.
         </h1>
 
         <div className="mt-10 grid animate-rise gap-10 [animation-delay:160ms] lg:grid-cols-[1.2fr,1fr] lg:items-end">
