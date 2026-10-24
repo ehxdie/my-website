@@ -19,15 +19,16 @@ export default function Hero() {
 
         <div className="mt-10 grid animate-rise gap-10 [animation-delay:160ms] lg:grid-cols-[1.2fr,1fr] lg:items-end">
           <p className="max-w-xl text-lg leading-relaxed text-muted">
-            I’m Edidiong Ephraim, a software engineer who leads backend and full-stack work for fintech and AI startups:
-            cross-border card payments, KYC, eSIM provisioning, escrow payouts, RAG search. On the side I built{' '}
+            I’m Edidiong Ephraim, a software engineer who has led backend work for fintech and AI startups:
+            cross-border card payments, KYC, eSIM provisioning, escrow payouts, RAG search. Today I build property-operations
+            software and data pipelines for a real-estate investment firm. On the side I built{' '}
             <a href="#sirius" className="link text-ink">Sirius</a>, a platform that trades prop-firm accounts by itself.
           </p>
           <div className="card grid gap-3 p-5 text-sm">
             <div className="eyebrow">Right now</div>
             <div className="flex items-start justify-between gap-4">
-              <div><div className="font-medium">Lead Software Engineer · TM-Labs</div><div className="text-muted">USD→NGN virtual cards, Stripe, Sum-Sub KYC, eSIM</div></div>
-              <span className="chip shrink-0">2025 –</span>
+              <div><div className="font-medium">Software Engineer · AB Investments</div><div className="text-muted">Property operations system, lead-gen pipelines, scrapers</div></div>
+              <span className="chip shrink-0">2026 –</span>
             </div>
             <div className="h-px bg-line" />
             <div className="flex items-start justify-between gap-4">
@@ -39,7 +40,7 @@ export default function Hero() {
 
         <div className="mt-10 flex animate-rise flex-wrap gap-3 [animation-delay:240ms]">
           <a href="#work" className="btn-accent">See the work <Arrow /></a>
-          <a href={profile.cv} target="_blank" rel="noopener noreferrer" className="btn-ghost">Read my CV</a>
+          <a href={profile.cv} download className="btn-ghost">Download CV (PDF)</a>
         </div>
       </div>
 

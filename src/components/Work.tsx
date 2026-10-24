@@ -55,20 +55,20 @@ function ProjectRow({ p }: { p: Work }) {
 
 export default function WorkSection() {
   return (
-    <section id="work" className="border-t border-line py-24 sm:py-32">
+    <section id="work" className="py-24 sm:py-32">
       <div className="wrap">
         <SectionHead
-          index="02"
+          index="01"
           label="Client work"
           title="Recent builds for clients"
-          intro="Demos of products I’ve built for clients this year. Each runs on sample data, so you can click through everything."
+          intro="Products I’ve built for clients this year. Both are live, so click through and try them."
         />
         <div className="grid gap-4 md:grid-cols-2">
           {clientWork.map((w, i) => <ClientCard key={w.name} w={w} i={i} />)}
         </div>
 
         <div className="mt-24">
-          <SectionHead index="03" label="Projects" title="Things I built to learn and to ship" />
+          <SectionHead index="02" label="Projects" title="Things I built to learn and to ship" />
           <div className="border-b border-line">
             {projects.map((p) => <ProjectRow key={p.name} p={p} />)}
           </div>

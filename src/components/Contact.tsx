@@ -14,7 +14,7 @@ export default function Contact() {
             <div className="flex gap-5 pt-2">
               <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="link inline-flex items-center gap-1">LinkedIn <Arrow className="h-3.5 w-3.5" /></a>
               <a href={profile.github} target="_blank" rel="noopener noreferrer" className="link inline-flex items-center gap-1.5"><GitHubIcon />GitHub</a>
-              <a href={profile.cv} target="_blank" rel="noopener noreferrer" className="link inline-flex items-center gap-1">CV <Arrow className="h-3.5 w-3.5" /></a>
+              <a href={profile.cv} download className="link inline-flex items-center gap-1">CV <Arrow className="h-3.5 w-3.5" /></a>
             </div>
           </div>
         </Reveal>

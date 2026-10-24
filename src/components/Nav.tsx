@@ -3,10 +3,10 @@ import { profile } from '../data';
 import { ThemeToggle } from './ui';
 
 const LINKS = [
-  { href: '#sirius', label: 'Sirius' },
   { href: '#work', label: 'Work' },
   { href: '#experience', label: 'Experience' },
   { href: '#about', label: 'About' },
+  { href: '#sirius', label: 'Sirius' },
 ];
 
 export default function Nav() {
@@ -29,7 +29,7 @@ export default function Nav() {
             {LINKS.map((l) => <a key={l.href} href={l.href} className="rounded-full px-3 py-1.5 text-sm text-muted transition hover:text-ink">{l.label}</a>)}
           </div>
           <a href="#contact" className="btn-ghost !px-4 !py-1.5">Contact</a>
-          <a href={profile.cv} target="_blank" rel="noopener noreferrer" className="btn-accent hidden !px-4 !py-1.5 sm:inline-flex">CV</a>
+          <a href={profile.cv} download className="btn-accent hidden !px-4 !py-1.5 sm:inline-flex">CV</a>
           <ThemeToggle />
         </div>
       </nav>

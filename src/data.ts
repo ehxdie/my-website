@@ -1,18 +1,18 @@
-// All site content in one place. Facts come from the CV (Oct 2026), the live demos and the project repos.
+// All site content in one place. Facts come from the CV (updated Oct 2026), the live demos and the project repos.
 
 export const profile = {
   name: 'Edidiong Ephraim',
-  role: 'Lead Software Engineer',
-  location: 'Nigeria · working remotely',
+  role: 'Software Engineer · Lead Backend',
+  location: 'Abuja, Nigeria · working remotely',
   email: 'ephraimedy@gmail.com',
-  cv: 'https://docs.google.com/document/d/1_H8IMPC_mGm9nt3ne3XLF5OHlY96AnzaARMXE4HGmLE/edit?usp=sharing',
+  cv: '/Ephraim-Edidiong-CV.pdf', // downloaded by the CV buttons
   github: 'https://github.com/ehxdie',
   linkedin: 'https://www.linkedin.com/in/edidiong-ephraim/',
   formAction: 'https://getform.io/f/d04d86fd-8da9-4703-b5a2-32ead47f7d91',
 };
 
 export const stack = [
-  'TypeScript', 'Go', 'Rust', 'Haskell', 'Solidity', 'Node.js', 'React', 'Vue', 'Next.js', 'PostgreSQL',
+  'TypeScript', 'Rust', 'Haskell', 'Solidity', 'C#', 'Node.js', 'React', 'Vue', 'Next.js', 'PostgreSQL',
   'Redis', 'Prisma', 'Docker', 'Stripe', 'Twilio', 'Sum-Sub', 'LlamaIndex', 'Pinecone', 'MQL5', 'GitHub Actions',
 ];
 
@@ -45,16 +45,6 @@ export interface Work { name: string; kind: string; year: string; summary: strin
 
 export const clientWork: Work[] = [
   {
-    name: 'Governance Hub',
-    kind: 'Client demo · GRC platform',
-    year: '2026',
-    summary: 'A governance, risk and compliance hub for a payments group: KPIs, regulatory obligations, admin-access reviews, gaps and escalations, with a full audit log.',
-    points: ['Five roles, from Super Admin to Auditor', 'Microsoft Entra ID sign-in with number-matching MFA (simulated)', 'Leaver and expired-access detection with escalation deadlines'],
-    stack: [],
-    link: 'https://governance-hub-demo.vercel.app',
-    image: '/work/governance.jpg',
-  },
-  {
     name: 'Afro Genie Games',
     kind: 'Client demo · consumer product',
     year: '2026',
@@ -74,17 +64,6 @@ export const clientWork: Work[] = [
     link: 'https://danak-ten.vercel.app',
     repo: 'https://github.com/ehxdie/Danak',
     image: '/work/danak.jpg',
-  },
-  {
-    name: 'Phone OTP Verification',
-    kind: 'Client demo · auth flow',
-    year: '2026',
-    summary: 'A phone verification flow: country picker, 6-digit SMS code and a three-step progress UI, backed by a documented API.',
-    points: ['Twilio Verify on an Express API', 'Helmet, request logging and Swagger docs', 'Country-aware number input'],
-    stack: ['React', 'Vite', 'TypeScript', 'Express', 'Twilio'],
-    link: 'https://otp-verification-smoky.vercel.app',
-    repo: 'https://github.com/ehxdie/Otp_verification',
-    image: '/work/otp.jpg',
   },
 ];
 
@@ -111,18 +90,7 @@ export const projects: Work[] = [
     image: '',
   },
   {
-    name: 'FitFlex',
-    kind: 'Full-stack app',
-    year: '2023',
-    summary: 'Custom workout plans with a Rust (Warp) REST backend on MongoDB, all in Docker.',
-    points: [],
-    stack: ['React', 'Rust', 'Warp', 'MongoDB', 'Docker'],
-    link: 'https://fitflex-ten.vercel.app/',
-    repo: 'https://github.com/ehxdie/MERN-CRUD--workout-app-',
-    image: '/work/fitflex.jpg',
-  },
-  {
-    name: 'Blockchain voting',
+    name: 'Blockchain voting system',
     kind: 'MSc thesis',
     year: '2023',
     summary: 'Secure electronic voting on Ethereum: a Solidity contract on the Sepolia testnet, MetaMask sign-in, tested with Chai and Mocha.',
@@ -132,46 +100,49 @@ export const projects: Work[] = [
     repo: 'https://github.com/ehxdie/voting-application',
     image: '/work/voting.jpg',
   },
-  {
-    name: 'Real-estate scraper',
-    kind: 'Data tool',
-    year: '2026',
-    summary: 'Collects Craigslist property listings, enriches them from detail pages, filters by price and type, and exports CSV and JSON.',
-    points: [],
-    stack: ['Python'],
-    repo: 'https://github.com/ehxdie/real_estate_scraper',
-    image: '',
-  },
 ];
 
 export interface Role { company: string; title: string; dates: string; place: string; points: string[]; stack: string[] }
 
 export const experience: Role[] = [
   {
-    company: 'TM-Labs',
-    title: 'Lead Software Engineer (contract)',
-    dates: 'Apr 2025 – present',
+    company: 'AB Investments',
+    title: 'Software Engineer / Web Scraper (contract)',
+    dates: 'Apr 2026 – present',
     place: 'Remote',
     points: [
-      'Built a USD→NGN virtual card system funding naira wallets from abroad, with Stripe, Yellowcard and Fern',
+      'Built PMOS, a Kanban-style property operations system with role-based access for leasing, maintenance, unit turns and tenant escalations',
+      '“Driving for Dollars” lead pipeline: ingests listings, geocodes addresses, queries county GIS parcels and skip-traces owners into de-duplicated lead sheets',
+      'Discord bot that logs team messages and property leads straight into a master Google Sheet',
+      'Automated web scrapers and market lead-generation tools for real-estate data',
+    ],
+    stack: ['TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Express', 'Discord.js', 'Google Sheets API', 'Cheerio'],
+  },
+  {
+    company: 'TM Labs',
+    title: 'Lead Backend Engineer (contract)',
+    dates: 'Apr 2025 – Aug 2026',
+    place: 'Remote',
+    points: [
+      'Built a USD→NGN virtual card system funding naira wallets from abroad with Stripe onRamp',
       'Led end-to-end KYC with Sum-Sub, automating regulated onboarding',
       'Stripe checkout and webhooks for eSIM sales, plus provisioning, top-ups and usage tracking',
-      'Migrated users from a legacy card platform to the main app with no disruption to funding',
+      'Launched the core payment app, migrating users from a legacy card platform with no disruption to funding',
     ],
-    stack: ['TypeScript', 'Go', 'Postgres', 'Prisma', 'Docker', 'Stripe', 'Sum-Sub'],
+    stack: ['TypeScript', 'Postgres', 'Prisma', 'Docker', 'Stripe', 'Sum-Sub', 'Yellowcard', 'Fern'],
   },
   {
     company: 'Ajarra',
-    title: 'Lead Software Engineer (contract)',
+    title: 'Lead Backend Engineer (contract)',
     dates: 'May – Nov 2025',
     place: 'Remote',
     points: [
       'Google, Apple and Facebook sign-in with JWT, and Twilio SMS OTP for sign-up and sensitive actions',
       'Moved real-time chat from PostgreSQL to Redis Pub/Sub for lower latency',
       'Escrow and automated vendor payouts with Flutterwave and Paystack',
-      'Moved the backend from Render to a VPS with GitHub Actions CI/CD',
+      'Admin dashboard with analytics and contract management; moved the backend to a VPS with GitHub Actions CI/CD',
     ],
-    stack: ['TypeScript', 'Prisma', 'Postgres', 'Redis', 'Flutterwave', 'Paystack'],
+    stack: ['TypeScript', 'Prisma', 'Postgres', 'Redis', 'Dojah', 'Flutterwave', 'Paystack'],
   },
   {
     company: 'Loopit',
@@ -188,7 +159,7 @@ export const experience: Role[] = [
   {
     company: 'Norm',
     title: 'Full Stack Developer',
-    dates: 'Jan 2024 – present',
+    dates: 'Jan – Oct 2024',
     place: 'Remote',
     points: [
       'Moved the backend from Prisma to Flask (30% faster responses)',
@@ -220,9 +191,3 @@ export const education = [
   { degree: 'BSc Industrial Physics', school: 'Covenant University, Ota', years: '2017 – 2021', grade: '4.18 / 5.0' },
 ];
 
-export const certifications = [
-  { name: 'Google IT Automation with Python', href: 'https://www.coursera.org/account/accomplishments/professional-cert/NWYNCEWCJ7ED' },
-  { name: 'Learn Ethical Hacking from Scratch', href: 'https://www.udemy.com/certificate/UC-b785736e-4127-4189-a183-ae0f1b4ea19e/' },
-  { name: 'JavaScript Algorithms and Data Structures', href: 'https://www.freecodecamp.org/certification/fccae603b21-2c08-4c5d-ac60-570ee44d7929/javascript-algorithms-and-data-structures' },
-  { name: 'Front End Development Libraries', href: 'https://www.freecodecamp.org/certification/fccae603b21-2c08-4c5d-ac60-570ee44d7929/front-end-development-libraries' },
-];

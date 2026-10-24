@@ -22,10 +22,10 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <Sirius />
         <WorkSection />
         <Experience />
         <About />
+        <Sirius />
         <Contact />
       </main>
       <footer className="border-t border-line py-10">

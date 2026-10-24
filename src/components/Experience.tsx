@@ -6,18 +6,18 @@ export default function Experience() {
     <section id="experience" className="border-t border-line py-24 sm:py-32">
       <div className="wrap">
         <SectionHead
-          index="04"
+          index="03"
           label="Experience"
           title="Four years shipping production systems"
-          intro="Mostly remote contracts with fintech and AI startups, leading the backend and the integrations that move money and data."
+          intro="Mostly remote contracts with fintech, AI and real-estate companies, leading the backend and the integrations that move money and data."
         />
         <ol className="grid">
-          {experience.map((r, i) => (
+          {experience.map((r) => (
             <Reveal key={r.company} className="grid gap-4 border-t border-line py-8 md:grid-cols-[220px,1fr] md:gap-10">
               <div className="grid content-start gap-1">
                 <div className="font-mono text-xs text-muted">{r.dates}</div>
                 <div className="font-mono text-[11px] text-muted/80">{r.place}</div>
-                {i < 2 && <span className="chip mt-2 w-fit border-accent/40 text-accent">Lead role</span>}
+                {r.title.startsWith('Lead') && <span className="chip mt-2 w-fit border-accent/40 text-accent">Lead role</span>}
               </div>
               <div className="grid gap-4">
                 <div>

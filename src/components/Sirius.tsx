@@ -10,10 +10,10 @@ const FLOW = [
 
 export default function Sirius() {
   return (
-    <section id="sirius" className="py-24 sm:py-32">
+    <section id="sirius" className="border-t border-line py-24 sm:py-32">
       <div className="wrap">
         <SectionHead
-          index="01"
+          index="05"
           label="Case study"
           title={<>Sirius: {sirius.tagline}</>}
           intro={sirius.summary}
