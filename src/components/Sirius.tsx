@@ -22,7 +22,7 @@ export default function Sirius() {
         <Reveal className="grid gap-3 sm:grid-cols-3">
           {sirius.stats.map((s) => (
             <div key={s.label} className="card p-6">
-              <div className="font-display text-5xl font-extrabold tracking-tight text-accent">{s.value}</div>
+              <div className="neon font-display text-5xl font-bold tracking-tight">{s.value}</div>
               <div className="mt-2 text-sm text-muted">{s.label}</div>
             </div>
           ))}
@@ -34,7 +34,7 @@ export default function Sirius() {
           <div className="flex min-w-[640px] items-stretch">
             {FLOW.map((f, i) => (
               <div key={f.name} className="flex flex-1 items-center">
-                <div className="flex-1 rounded-xl border border-line bg-bg px-4 py-3">
+                <div className="flex-1 border border-accent/30 bg-bg/80 px-4 py-3 shadow-[inset_0_0_20px_rgb(0_238_255/0.06)]">
                   <div className="font-medium">{f.name}</div>
                   <div className="font-mono text-[11px] text-muted">{f.sub}</div>
                 </div>
@@ -55,7 +55,7 @@ export default function Sirius() {
           <Reveal className="card p-6">
             <div className="eyebrow mb-4">What I built</div>
             <ul className="grid gap-3 text-[15px] leading-relaxed">
-              {sirius.built.map((b) => <li key={b} className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />{b}</li>)}
+              {sirius.built.map((b) => <li key={b} className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 bg-hot shadow-[0_0_8px_rgb(255_46_210/0.8)]" />{b}</li>)}
             </ul>
             <div className="mt-6 grid gap-3">
               <Chips items={sirius.stackList} />

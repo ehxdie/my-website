@@ -4,15 +4,15 @@ import { Arrow, Chips, GitHubIcon, Reveal, SectionHead } from './ui';
 function ClientCard({ w, i }: { w: Work; i: number }) {
   return (
     <Reveal delay={(i % 2) * 90} className="group card flex flex-col overflow-hidden">
-      <a href={w.link} target="_blank" rel="noopener noreferrer" className="relative block aspect-[16/10] overflow-hidden border-b border-line bg-bg" aria-label={`Open the ${w.name} demo`}>
+      <a href={w.link} target="_blank" rel="noopener noreferrer" className="shot relative block aspect-[16/10] overflow-hidden border-b border-accent/20 bg-bg" aria-label={`Open the ${w.name} demo`}>
         <img src={w.image} alt={`${w.name} screenshot`} loading="lazy" className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.03]" />
-        <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-bg/80 text-ink opacity-0 backdrop-blur transition group-hover:opacity-100"><Arrow /></span>
+        <span className="absolute right-3 top-3 z-10 grid h-9 w-9 place-items-center border border-accent bg-bg/80 text-accent opacity-0 backdrop-blur transition group-hover:opacity-100"><Arrow /></span>
       </a>
       <div className="flex flex-1 flex-col gap-4 p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
             <div className="eyebrow mb-1.5">{w.kind}</div>
-            <h3 className="text-2xl font-bold tracking-tight">{w.name}</h3>
+            <h3 className="text-2xl font-bold uppercase tracking-tight transition group-hover:text-accent">{w.name}</h3>
           </div>
           <span className="chip shrink-0">{w.year}</span>
         </div>
@@ -38,7 +38,7 @@ function ProjectRow({ p }: { p: Work }) {
   return (
     <Reveal className="group grid gap-3 border-t border-line py-6 sm:grid-cols-[minmax(0,1fr),minmax(0,1.7fr),150px] sm:items-baseline sm:gap-8">
       <div>
-        <h3 className="text-xl font-bold tracking-tight">{p.name}</h3>
+        <h3 className="text-xl font-bold uppercase tracking-tight transition group-hover:text-accent">{p.name}</h3>
         <div className="font-mono text-[11px] text-muted">{p.kind} · {p.year}</div>
       </div>
       <div className="grid gap-3">

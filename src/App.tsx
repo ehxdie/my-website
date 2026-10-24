@@ -18,7 +18,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="grain">
+    <div className="crt">
       <Nav />
       <main>
         <Hero />

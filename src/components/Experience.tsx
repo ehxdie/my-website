@@ -17,15 +17,15 @@ export default function Experience() {
               <div className="grid content-start gap-1">
                 <div className="font-mono text-xs text-muted">{r.dates}</div>
                 <div className="font-mono text-[11px] text-muted/80">{r.place}</div>
-                {r.title.startsWith('Lead') && <span className="chip mt-2 w-fit border-accent/40 text-accent">Lead role</span>}
+                {r.title.startsWith('Lead') && <span className="chip mt-2 w-fit !border-hot/50 !bg-hot/5 !text-hot">Lead role</span>}
               </div>
               <div className="grid gap-4">
                 <div>
-                  <h3 className="text-2xl font-bold tracking-tight">{r.company}</h3>
+                  <h3 className="text-2xl font-bold uppercase tracking-tight">{r.company}</h3>
                   <div className="text-muted">{r.title}</div>
                 </div>
                 <ul className="grid gap-2 leading-relaxed">
-                  {r.points.map((p) => <li key={p} className="flex gap-3"><span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-muted" />{p}</li>)}
+                  {r.points.map((p) => <li key={p} className="flex gap-3"><span className="mt-2.5 h-1 w-1.5 shrink-0 bg-accent/70" />{p}</li>)}
                 </ul>
                 <Chips items={r.stack} />
               </div>
