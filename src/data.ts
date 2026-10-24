@@ -1,7 +1,7 @@
 // All site content in one place. Facts come from the CV (updated Oct 2026), the live demos and the project repos.
 
 export const profile = {
-  name: 'Edidiong Ephraim',
+  name: 'Eddy Ephraim',
   role: 'Software Engineer · Lead Backend',
   location: 'Abuja, Nigeria · Remote',
   email: 'ephraimedy@gmail.com',

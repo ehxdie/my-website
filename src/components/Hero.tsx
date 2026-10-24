@@ -39,7 +39,7 @@ export default function Hero() {
 
         <div className="mt-10 grid animate-rise gap-10 [animation-delay:160ms] lg:grid-cols-[1.2fr,1fr] lg:items-end">
           <p className="max-w-xl text-lg leading-relaxed text-ink/75">
-            I’m Edidiong Ephraim, a software engineer who has led backend work for fintech and AI startups:
+            I’m Eddy Ephraim, a software engineer who has led backend work for fintech and AI startups:
             cross-border card payments, KYC, eSIM provisioning, escrow payouts, RAG search. Today I build property-operations
             software and data pipelines for a real-estate investment firm. On the side I built{' '}
             <a href="#sirius" className="link text-accent">Sirius</a>, a trading EA that finds, sizes and manages its own trades.
